@@ -1,2 +1,131 @@
-# -CCUtilCommons
-CCUtilsCommons Are Collections of C/C++ Simple Middlewares including common utils, programming templates and so on, which are expected to be used ranging from Embedded System to UpperLevel Programmings
+# 🌟 CCUtilCommons
+
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![C Standard](https://img.shields.io/badge/C-90%20~%20C11-green)]()
+[![C++ Standard](https://img.shields.io/badge/C++-98%20~%20C++17-orange)]()
+[![Status](https://img.shields.io/badge/status-活跃-brightgreen)]()
+
+---
+
+## 📖 简介
+
+**CCUtilCommons** 是一个面向 **C 与 C++** 的 **通用工具库集合**。  
+它旨在提供可复用的中间件与常用模块，适用于从 **嵌入式系统** 到 **上层应用开发** 的不同场景。  
+
+- ✅ 支持 **C90 ~ C11**、**C++98 ~ C++17**  
+- ✅ 涵盖 **数据结构、网络、并发、日志、时间、编码压缩** 等模块  
+- ✅ 开源免费，适合学习与生产使用（⚠️ C++ 的数据结构模块仅推荐学习使用，生产环境请优先使用 STL）
+
+---
+
+## 📚 目录
+
+- [数据结构库](#-数据结构库)
+- [网络模块](#-网络模块)
+- [并发与同步模块](#-并发与同步模块)
+- [日志与配置模块](#-日志与配置模块)
+- [时间与定时模块](#-时间与定时模块)
+- [编码与压缩模块](#-编码与压缩模块)
+- [嵌入式扩展](#-嵌入式扩展)
+- [常见中间件](#-常见中间件)
+
+---
+
+## 📦 数据结构库
+
+> 提供 C 与 C++ 的实现。  
+> ⚠️ 注意：C++ 部分仅推荐用于学习，生产环境请直接使用 STL。
+
+| 数据结构             | 描述                     | 仓库地址 |
+| -------------------- | ------------------------ | -------- |
+| 动态数组             | 支持动态扩容的数组       | None     |
+| 链表                 | 单链表、双向链表实现     | None     |
+| 栈 / 队列 / 双端队列 | 基于动态数组或链表的封装 | None     |
+| 哈希表               | 通用哈希表及哈希函数支持 | None     |
+| 平衡树               | AVL 树 / 红黑树          | None     |
+| 多叉树               | N 叉树 / B 树结构        | None     |
+| CCString             | 常用字符串操作库         | None     |
+
+---
+
+## 🕸 网络模块
+
+围绕 **Socket、DNS、HTTP** 构建的网络支持：
+
+| 子模块                   | 功能                                                         | 仓库地址 |
+| ------------------------ | ------------------------------------------------------------ | -------- |
+| **Socket 封装层**        | 封装 `socket()`、`bind()`、`listen()`、`accept()`、`connect()` 等 | None     |
+| **DNS 解析**             | 基于 `getaddrinfo()` / `getnameinfo()`，支持 IPv4/IPv6       | None     |
+| **TCP & UDP 支持**       | 非阻塞/超时、缓冲、`select/poll` 等模式                      | None     |
+| **HTTP 客户端/服务端**   | 基础请求/响应，支持头部与分块传输                            | None     |
+| **（可选）原始报文捕获** | 基于 `libpcap`，支持抓包、过滤与回放                         | None     |
+
+---
+
+## 🛡 并发与同步模块
+
+| 功能                  | 描述                                    | 仓库地址 |
+| --------------------- | --------------------------------------- | -------- |
+| **线程**              | 封装 POSIX `pthread_create/join/detach` | None     |
+| **互斥锁 / 条件变量** | 提供抽象以避免数据竞争                  | None     |
+| **线程池**            | 工作线程、任务队列、优雅启动与关闭      | None     |
+| **原子与无锁操作**    | 小型原子操作与无锁队列支持              | None     |
+
+---
+
+## 📝 日志与配置模块
+
+| 功能               | 描述                                                    | 仓库地址 |
+| ------------------ | ------------------------------------------------------- | -------- |
+| **日志系统**       | 支持 DEBUG/INFO/WARN/ERROR 等日志级别，输出到终端或文件 | None     |
+| **配置解析**       | 简单的 INI/JSON 解析器，或封装 `libconfuse` / `jansson` | None     |
+| **命令行参数解析** | 实现 `--flag` / `-o value` 风格的命令行接口             | None     |
+|                    |                                                         |          |
+
+---
+
+## 🕰 时间与定时模块
+
+| 功能           | 描述                                                  | 仓库地址 |
+| -------------- | ----------------------------------------------------- | -------- |
+| **时间处理**   | 封装 `clock_gettime()` / `gettimeofday()`，获取时间戳 | None     |
+| **休眠与定时** | 毫秒/微秒级休眠，`timerfd`，基于信号的定时器          | None     |
+| **性能计时**   | 高精度运行时间测量，用于性能分析                      | None     |
+
+---
+
+## 🔐 编码与压缩模块
+
+| 功能             | 描述                                 | 仓库地址 |
+| ---------------- | ------------------------------------ | -------- |
+| **字符编码转换** | UTF-8 / UTF-16 / ISO8859-1 转换 API  | None     |
+| **压缩工具**     | 封装 `zlib`，实现 `deflate/inflate`  | None     |
+| **加密与哈希**   | MD5、SHA1，可选 AES 等用于摘要和认证 | None     |
+
+---
+
+## 📦常见中间件
+
+| 功能     | 描述                                   | 仓库地址                                                     |
+| -------- | -------------------------------------- | ------------------------------------------------------------ |
+| 事件循环 | 类似Qt风格的简单事件循环和信号与槽机制 | [CCUtilCommons/CCEasyEventLoop: This is a simple EventLoop written in C++11, Aims to make a learnable and understandable EventLoop demos](https://github.com/CCUtilCommons/CCEasyEventLoop) |
+
+
+
+## ⚡ 嵌入式扩展
+
+> 针对 **MCU 与裸机开发** 的扩展模块  
+> （开发中 🚧）
+
+---
+
+## 📜 许可证
+
+本项目基于 [MIT License](LICENSE) 开源。
+
+---
+
+## 🤝 贡献
+
+欢迎贡献代码！  
+您可以提交 **Issue** 与 **Pull Request** 来完善本项目。
